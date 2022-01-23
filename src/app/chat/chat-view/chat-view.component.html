@@ -1,0 +1,44 @@
+<div class="chat-view">
+
+    <mat-card class="content">
+
+        <div class="card-header">
+            <mat-card-title class="card-title">Welcome to the <span>"{{ selectedChatRoom }}"</span> Chat Room</mat-card-title>
+            <mat-card-subtitle>screen name is: <em>{{ currentChatter?.screenName }}</em></mat-card-subtitle>
+        </div>
+
+        <form ngNativeValidate (ngSubmit)="sendChat()">
+
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput placeholder="Chat Message" name ="message" [(ngModel)]="message" id="message" required autocomplete="off" >
+                </mat-form-field>
+
+                <button mat-raised-button type="submit">
+                    Send
+                </button>
+            </div>
+
+        </form>
+
+        <div class="select-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Chat Room</mat-label>
+                <mat-select [(ngModel)]="selectedChatRoom">
+                  <mat-option *ngFor="let room of chatRooms" [value]="room">{{ room }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+
+    </mat-card>
+
+    <div *ngIf="errorMsg" class="error-message" [ngClass]="{'hide-alert': isActive}">
+        <mat-icon inline>error</mat-icon>
+        {{errorMsg}}
+        <mat-icon class="close-icon" (click)="hide()">close</mat-icon>
+    </div>
+
+    <app-conversation [chatMessages]="chatMessages$ | async"></app-conversation>
+    
+</div>

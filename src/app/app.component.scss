@@ -1,0 +1,36 @@
+.mat-toolbar.mat-primary {
+    background: #424242;
+    color: GRAY;
+    .example-spacer {
+        flex: 1 1 auto;
+      }
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: gray;
+      }
+
+      .home{
+        margin-left: 50px;
+      }
+
+      .register{
+        margin-right: 50px;
+      }
+
+      .chat{
+          margin-right: 100px;
+      }
+  }
+
+  .main {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+
+
+
+

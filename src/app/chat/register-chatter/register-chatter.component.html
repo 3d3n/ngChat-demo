@@ -1,0 +1,39 @@
+<div class="register-view">
+
+    <mat-card class="content">
+
+        <div class="card-header">
+            <mat-card-title class="card-title">NG CHAT</mat-card-title>
+            <mat-card-subtitle>Registration</mat-card-subtitle>
+        </div>
+
+        <form [formGroup]="registrationForm" (ngSubmit)="registerChatter()">
+
+            <div class="input-field">
+                <mat-form-field appearance="outline">
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput placeholder="Screen Name" name="screenName" formControlName="screenName" id="screen-name" autocomplete="off">
+                </mat-form-field>
+            </div>
+    
+            <div class="select-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Chat Room</mat-label>
+                    <mat-select formControlName="selectedChatRoom">
+                      <mat-option *ngFor="let room of chatRooms" [value]="room">{{ room }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+    
+            <div class="register-btn">
+                <button mat-raised-button class="submit-btn" [disabled]="!registrationForm.valid">
+                    Register
+                </button>
+            </div>
+        </form>
+
+    </mat-card>
+
+    <!-- notification -->
+
+</div>

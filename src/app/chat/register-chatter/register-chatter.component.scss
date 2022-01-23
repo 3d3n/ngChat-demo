@@ -1,0 +1,22 @@
+.mat-card {
+  width: 300px;
+  height: 260px;
+
+  .card-header {
+    text-align: center;
+  }
+  .card-title {
+      color: cornflowerblue;
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.submit-btn {
+  background-color: skyblue;
+  color: white;
+}

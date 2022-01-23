@@ -1,0 +1,15 @@
+.conversation-view {
+  margin-top: 20px;
+  overflow-y: scroll;
+  max-height: 500px;
+
+
+  .first-name-character {
+    width: 40px;
+    height: 40px;
+    border-width: 50px;
+    line-height: 40px;
+    text-align: center;
+    background: rgb(random(255), random(255), random(255));
+  }
+}
